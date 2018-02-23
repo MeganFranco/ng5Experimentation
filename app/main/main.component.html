@@ -1,9 +1,39 @@
 <p> bonjour</p>
 <form [formGroup]="badgeForm" novalidate>
+<!-- <form novalidate> -->
   <!-- add something like this to the form element:
 (ngSubmit)="save(myForm.value, myForm.valid)"
 <button type="submit">Submit</button>
  -->
+   <div class="form-group">
+     <label>Name</label>
+     <input formControlName="name" type="text" class="form-control"/>
+  </div>
+
+  <div class="form-group" formGroupName="address">
+    <label>Address</label>
+    <div class="form-group">
+      <label>city</label>
+      <input formControlName="city" />
+    </div>
+
+    <div class="form-group">
+      <label>state</label>
+      <input formControlName="state" />
+    </div>
+
+    <div class="form-group">
+      <label>neighborhood</label>
+      <input formControlName="neighborhood"/>
+    </div>
+
+    <div class="form-group">
+      <label>zip</label>
+      <input formControlName="zip" />
+    </div>
+</div>
 
 </form>
+
+<p>{{ badgeForm.value | json }}</p>
 <a routerLink="">close form</a>
